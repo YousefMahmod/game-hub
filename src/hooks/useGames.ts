@@ -3,10 +3,18 @@ import apiClient from "../services/api-client";
 import {CanceledError} from "axios";
 
 //use custom hook to seperate logic
+
+export interface Platform {
+    id: number;
+    slug: string;
+    name: string;
+}
 export interface Game {
     id: number;
     name: string;
     background_image: string;
+    parent_platforms: {platform: Platform}[]
+
 }
   
 interface FetchGamesResponse {
@@ -20,7 +28,10 @@ export const useGames = () => {
     const controller = new AbortController();
     apiClient
       .get<FetchGamesResponse>("/games", {signal: controller.signal})
-      .then((res) => setGames(res.data.results))
+      .then((res) => {
+        console.log(res.data.results)
+        setGames(res.data.results)
+    })
       .catch((err) => {
         if(err instanceof CanceledError) return;
         setError(err.message)
