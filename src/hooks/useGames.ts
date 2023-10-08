@@ -1,12 +1,9 @@
 import useData from "./useData";
 import { Genre } from "./useGenres";
+import { Platform } from "./usePlatforms";
 
 //use custom hook to seperate logic
-export interface Platform {
-    id: number;
-    slug: string;
-    name: string;
-}
+
 export interface Game {
     id: number;
     name: string;
