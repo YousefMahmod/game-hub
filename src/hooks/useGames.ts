@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 //use custom hook to seperate logic
 export interface Platform {
@@ -14,4 +15,4 @@ export interface Game {
     metacritic: number;
 }
 
-export const useGames = () => useData<Game>("/games");
+export const useGames = (selectedGenre: Genre | null) => useData<Game>("/games", {params: {genres: selectedGenre?.id}}, [selectedGenre]);
