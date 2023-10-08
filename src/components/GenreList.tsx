@@ -1,6 +1,7 @@
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -21,33 +22,41 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   ];
   if (error) return null;
   return (
-    <List>
-      {isLoading &&
-        skeletons.map((skeleton) => (
-          <ListItem key={skeleton} paddingY="5px">
-            <Skeleton height="20px" />
+    <>
+      <Heading marginBottom={3} fontSize="2xl">
+        Genres
+      </Heading>
+      <List>
+        {isLoading &&
+          skeletons.map((skeleton) => (
+            <ListItem key={skeleton} paddingY="5px">
+              <Skeleton height="20px" />
+            </ListItem>
+          ))}
+        {data.map((genre) => (
+          <ListItem key={genre.id} paddingY="5px">
+            <HStack>
+              <Image
+                boxSize="36px"
+                borderRadius="8px"
+                src={getCroppedImage(genre.image_background)}
+                objectFit="cover"
+              />
+              <Button
+                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                onClick={() => onSelectGenre(genre)}
+                fontSize="lg"
+                variant="link"
+                whiteSpace="normal"
+                textAlign="left"
+              >
+                {genre.name}
+              </Button>
+            </HStack>
           </ListItem>
         ))}
-      {data.map((genre) => (
-        <ListItem key={genre.id} paddingY="5px">
-          <HStack>
-            <Image
-              boxSize="36px"
-              borderRadius="8px"
-              src={getCroppedImage(genre.image_background)}
-            />
-            <Button
-              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
-              onClick={() => onSelectGenre(genre)}
-              fontSize="lg"
-              variant="link"
-            >
-              {genre.name}
-            </Button>
-          </HStack>
-        </ListItem>
-      ))}
-    </List>
+      </List>
+    </>
   );
 };
 
