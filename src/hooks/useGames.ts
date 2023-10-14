@@ -3,6 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import ApiClient from "../services/api-client";
 import { FetchResponse } from "../services/api-client";
 import { Platform } from "./usePlatforms";
+import ms from "ms";
 
 //use custom hook to seperate logic
 export interface Game {
@@ -31,6 +32,6 @@ export const useGames = (gameQuery: GameQuery) => {
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },
-    staleTime: 24 * 60 * 60 * 1000, // 24h
+    staleTime: ms("24h"), // 24h
   });
 };

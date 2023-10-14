@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import ApiClient from "../services/api-client";
 import genres from "../data/genres";
+import ms from "ms";
 
 //use custom hook to seperate logic
 export interface Genre {
@@ -14,7 +15,7 @@ export const useGenres = () => {
   return useQuery({
     queryKey: ["genres"],
     queryFn: () => apiClient.getAll(),
-    staleTime: 24 * 60 * 60 * 1000, // 24h
+    staleTime: ms("24h"), // 24h
     initialData: genres,
   });
 };
