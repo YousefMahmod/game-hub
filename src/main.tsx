@@ -10,13 +10,13 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ChakraProvider theme={theme}>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-    <QueryClientProvider client={queryClient}>
-      <React.StrictMode>
+  <React.StrictMode>
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <QueryClientProvider client={queryClient}>
         <App />
         <ReactQueryDevtools />
-      </React.StrictMode>
-    </QueryClientProvider>
-  </ChakraProvider>
+      </QueryClientProvider>
+    </ChakraProvider>
+  </React.StrictMode>
 );
