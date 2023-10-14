@@ -7,15 +7,17 @@ import {
   ListItem,
   Skeleton,
 } from "@chakra-ui/react";
-import { Genre, useGenres } from "../hooks/useGenres";
+import { useGenres } from "../hooks/useGenres";
 import getCroppedImage from "../services/image-url";
-
 interface Props {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  onSelectGenre: (genreId: number) => void;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({
+  onSelectGenre,
+  selectedGenreId: selectedGenre,
+}: Props) => {
   const { data, isLoading, error } = useGenres();
   const skeletons = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
@@ -43,8 +45,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 objectFit="cover"
               />
               <Button
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
-                onClick={() => onSelectGenre(genre)}
+                fontWeight={genre.id === selectedGenre ? "bold" : "normal"}
+                onClick={() => onSelectGenre(genre.id)}
                 fontSize="lg"
                 variant="link"
                 whiteSpace="normal"
