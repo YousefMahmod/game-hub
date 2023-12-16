@@ -8,8 +8,8 @@ export interface Platform {
   name: string;
 }
 
+const apiClient = new ApiClient<Platform>("/platforms/lists/parents");
 export const usePlatforms = () => {
-  const apiClient = new ApiClient<Platform>("/platforms/lists/parents");
   return useQuery({
     queryKey: ["platforms"],
     queryFn: () => apiClient.getAll(),
