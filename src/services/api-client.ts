@@ -30,6 +30,11 @@ class ApiClient<T> {
       .get<T>(`${this.endpoint}/${id}`)
       .then((res) => res.data);
   };
+  getGameTrailers = () => {
+    return axiosInstance
+      .get<FetchResponse<T>>(this.endpoint)
+      .then((res) => res.data);
+  };
 }
 
 export default ApiClient;

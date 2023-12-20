@@ -1,4 +1,4 @@
-import { Box, Heading, List, ListItem, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface Props {
