@@ -20,7 +20,6 @@ const GameDetailPage = () => {
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>
-
       <GridItem>
         <GameTrialer gameId={game.id} />
         <GameScreenShots gameId={game.id} gameName={game.name} />
