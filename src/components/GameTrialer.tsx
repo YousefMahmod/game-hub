@@ -4,12 +4,13 @@ interface Props {
   gameId: number;
 }
 const GameTrialer = ({ gameId }: Props) => {
-  const { data: trailer, error, isLoading } = useTrailers(gameId);
+  const { data, error, isLoading } = useTrailers(gameId);
   if (isLoading) return null;
   if (error) throw error;
-  const trailers = trailer?.results;
-  return trailers ? (
-    <video poster={trailers[0].preview} src={trailers[0].data[480]} controls />
+
+  const trailer = data?.results[0];
+  return trailer ? (
+    <video poster={trailer.preview} src={trailer.data[480]} controls />
   ) : null;
 };
 
