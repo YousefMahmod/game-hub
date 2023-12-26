@@ -7,6 +7,8 @@
 - [About](#about)
 - [Features](#features)
 - [Getting started](#getting-started)
+- [Tools](#tools)
+- [File structure](#file-structure)
 ## About
 > An all in one go-to website for every renowned Game ever known, it's your No. 1 refernce for your gaming experience. It contains a massive collection of games along with indepth information about them, including supported OSs and screenshots from gameplay along with the game trailer to better grasp a feel of how the game is.
 ## Features
