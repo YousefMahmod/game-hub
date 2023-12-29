@@ -7,6 +7,7 @@
 - [About](#about)
 - [Features](#features)
 - [Getting started](#getting-started)
+- [Showcasing](#showcasing)
 - [Tools](#tools)
 - [File structure](#file-structure)
 ## About
@@ -22,6 +23,9 @@ It comes with variety of features in a catchy UI that's easy to use providing yo
 3) npm run dev
 ### Demo
 - [Demo](https://game-9cm8qi814-youssefs-projects-93a01e1a.vercel.app/)
+## Showcasing
+- [Scrolling,Filters and Search video](https://drive.google.com/file/d/1Mkz0sRPhuX91tlawE_LIFKb64HZUTKGX/view?usp=sharing)
+- [Game detail page with showing light mode](https://drive.google.com/file/d/1OGtohjG0q1x9tvwwoGM45krCzOF4CEHs/view?usp=sharing)
 ## Tools
 - React.js with typescript
 - react-dom
