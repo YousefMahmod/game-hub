@@ -22,7 +22,7 @@ It comes with variety of features in a catchy UI that's easy to use providing yo
 2) npm i
 3) npm run dev
 ### Demo
-- [Demo](https://game-9cm8qi814-youssefs-projects-93a01e1a.vercel.app/)
+- [Demo](https://game-hub-virid-ten-33.vercel.app/)
 ## Showcasing
 - [Scrolling,Filters and Search video](https://drive.google.com/file/d/1Mkz0sRPhuX91tlawE_LIFKb64HZUTKGX/view?usp=sharing)
 - [Game detail page with showing light mode](https://drive.google.com/file/d/1OGtohjG0q1x9tvwwoGM45krCzOF4CEHs/view?usp=sharing)
